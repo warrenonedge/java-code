@@ -1,0 +1,36 @@
+You will be implementing a (very) rudimentary UPC-A barcode printer.  This program:
+
+1) Must be written, in order of preference, in either Java, python, perl, C, C++, or ruby.
+2) Provide any build instructions necessary to compile or build the code.
+3) Any and all resources available to you are fair game with the exception of outsourcing
+or blatant 'cheating'
+4) These requirements are not perfect; anything not specifically prohibited nor
+specifically required is fair game for interpretation and implementation.
+
+Please read 
+http://en.wikipedia.org/w/index.php?title=Universal_Product_Code&diff=334963156&oldid=333695146
+up to but not including the section called "Zero-compressed UPC-E".
+
+Interface:
+The interface must be a 100% command-line interface.  The only required interaction with the
+end-user is a method for giving the program a file to read from (see "Inputs").
+
+Inputs:
+The program will need to read in a text file with Unix line-endings ("\n") that uses the standard
+ANSI character set.  The mechanism for how the end-user specifies the file is up to the programmer
+(i.e. command line, interactive prompt, etc.), but it must be user selectable.  A bad or missing file
+must result in program termination and an error message to the user.
+
+The file format is guaranteed to be perfect, but the data itself is not.
+
+Each line is where the UPC, in numerical format (e.g. "123456789123" without the quotes), is located.
+As the scanner that provides this data is old and the software buggy, there could be "noise" on these
+lines.  Therefore, only the first twelve digits appearing on this line should be considered to be the 
+UPC.  Only a line containing at least twelve digits should be considered a valid code; invalid output
+should be discarded.
+
+Outputs:
+Upon reading the inputs, every valid UPC that was read in must have it's barcode printed to either
+the console or to a file.  The determination must be the user's at runtime, but the mechanism is up
+to you.  Each valid UPC should be on a line of it's own.  A 'bar' or 'one' should be represented with
+a pipe ("|"), and a 'space' or 'zero' should be represented with a standard space (" ").
