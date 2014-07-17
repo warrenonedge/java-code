@@ -4,6 +4,11 @@ import java.util.Arrays;
 public class LinkNode {
 	int[] data;
 	LinkNode next = null;
+	
+	public LinkNode() {
+		data = null;
+		next = null;
+	}
 
 	public LinkNode(int[] item) {
 		this.data = item;
@@ -11,6 +16,10 @@ public class LinkNode {
 	
 	public int[] getData() {
 		return this.data;
+	}
+	
+	public LinkNode getNext() {
+		return this.next;
 	}
 	
 	public void setDataAt(int index, int num) {

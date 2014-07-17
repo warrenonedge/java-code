@@ -2,9 +2,14 @@ package linkedList;
 import java.util.Arrays;
 
 public class LinkedList {
-	LinkNode head = null;
-	int length = 0;
-
+	protected LinkNode head = null;
+	protected int length = 0;
+	
+	public LinkedList() {
+		this.head = null;
+		this.length = 0;
+	}
+	
 	public LinkedList(int[] item) {
 		this.head = new LinkNode(item);
 		this.length = 1;
@@ -106,6 +111,10 @@ public class LinkedList {
 	
 	public int length() {
 		return this.length;
+	}
+	
+	public LinkNode getHead() {
+		return this.head;
 	}
 	
 	public LinkNode get(int index) {

@@ -1,5 +1,6 @@
 import linkedList.LinkedList;
 import linkedList.LinkNode;
+import queue.Queue;
 
 
 public class Tester {
@@ -43,6 +44,10 @@ public class Tester {
 		head.fillTo(10);
 		head.print();
 		System.out.println(String.format("%s[3] = %d",head.get(1),head.get(1).getData()[3]));
+		System.out.println("\n");
+		Queue queue = new Queue(data1,data2);
+		
+		
 	}
 
 }
