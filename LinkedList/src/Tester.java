@@ -1,6 +1,7 @@
 import linkedList.LinkedList;
 import linkedList.LinkNode;
 import queue.Queue;
+import stack.Stack;
 
 
 public class Tester {
@@ -44,8 +45,24 @@ public class Tester {
 		head.fillTo(10);
 		head.print();
 		System.out.println(String.format("%s[3] = %d",head.get(1),head.get(1).getData()[3]));
-		System.out.println("\n");
+		System.out.println("\nQueue Testing\n");
 		Queue queue = new Queue(data1,data2);
+		queue.print();
+		queue.enqueue(data);
+		queue.print();
+		System.out.print("This was Dequeued: ");
+		queue.dequeue().print();
+		queue.print();
+		System.out.println("\nStack Testing\n");
+		Stack stack = new Stack(data);
+		stack.print();
+		stack.push(data1);
+		stack.print();
+		System.out.print("This was Popped: ");
+		stack.pop().print();
+		stack.print();
+		
+		
 		
 		
 	}
